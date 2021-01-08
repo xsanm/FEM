@@ -9,3 +9,5 @@ N = 3
 
 
 disp(generate_B(N));
+disp(generate_L(N));
+disp(linsolve(generate_B(N), generate_L(N)));
