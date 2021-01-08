@@ -1,3 +1,9 @@
+%funkcja genrująca i-ty element
+%element jest postaci 
+% [a1, b1, p1, k1] => y = a1 * x + b, p1 <= x <= k1
+% [a2, b2, p2, k2] => y = a2 * x + b, p2 <= x <= k2
+% funkcja wykorzystuje metode Galerkina
+
 function[e]=generate_e(N, intervals, i)
 if i == 1
     e(1, 1) = 0;

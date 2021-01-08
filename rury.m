@@ -1,13 +1,37 @@
 clear all; close all; clc
 
-N = 3
-%disp(divide_interval(N));
-%for i = 0:N
-%    disp(i);
-%    disp(generate_e(N, divide_interval(N), i + 1));
-%end
+N = 5;
 
 
+%Wypisuje wynik
+disp("B(u, v): ");
 disp(generate_B(N));
+disp("L(v): ");
 disp(generate_L(N));
+disp("U :");
 disp(linsolve(generate_B(N), generate_L(N)));
+
+
+%Rozwiązuje układ równań
+res = linsolve(generate_B(N), generate_L(N));
+
+
+
+X = [0:0.001:2];
+Y = zeros(length(X));
+
+%Oblicza wynik
+for i = 1:length(X)
+    for j = 1:N + 1
+       e1 = generate_e(N, divide_interval(N), j);
+       if X(i) >= e1(1, 3) && X(i) <= e1(1, 4)
+           Y(i) =  Y(i) + (e1(1,1) * X(i) + e1(1,2)) * res(j);
+       end
+       if X(i) >= e1(2, 3) && X(i) <= e1(2, 4)
+           Y(i) =  Y(i) + (e1(2,1) * X(i) + e1(2,2)) * res(j);
+       end
+    end
+end
+
+%rysuje wykres
+plot(X,Y);
