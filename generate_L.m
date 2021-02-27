@@ -1,4 +1,4 @@
-%Funckja generująca macierz L(v)
+% Generating L(v) matrix
 
 function[L]=generate_L(N)
 L = zeros(N + 1);

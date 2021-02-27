@@ -1,5 +1,0 @@
-function [] = main(N)
-    N
-end
-
-ma

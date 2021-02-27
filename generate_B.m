@@ -1,4 +1,4 @@
-%Funckja generująca macierz B(u, v)
+%Generating B(u, v) matrix
 
 function[B]=generate_B(N)
 B = zeros(N + 1, N + 1);
@@ -59,7 +59,7 @@ for i = 1:N+1
             fun_dudv = @(x)(e1(1, 1)) * (e2(2, 1) * x.^0);
             a = e2(2, 3);
             b = e2(2, 4);
-            B(i, j) = integral(fun_dudv, a, b) - integral(fun_uv, a, b);% - fun_u(2)*fun_v(2);
+            B(i, j) = integral(fun_dudv, a, b) - integral(fun_uv, a, b);
         end
     end
 end

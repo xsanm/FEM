@@ -3,7 +3,7 @@ clear all; close all; clc
 N = 5;
 
 
-%Wypisuje wynik
+% showing result
 disp("B(u, v): ");
 disp(generate_B(N));
 disp("L(v): ");
@@ -12,7 +12,7 @@ disp("U :");
 disp(linsolve(generate_B(N), generate_L(N)));
 
 
-%Rozwiązuje układ równań
+% solving equations
 res = linsolve(generate_B(N), generate_L(N));
 
 
@@ -20,7 +20,7 @@ res = linsolve(generate_B(N), generate_L(N));
 X = [0:0.001:2];
 Y = zeros(length(X));
 
-%Oblicza wynik
+% counting result
 for i = 1:length(X)
     for j = 1:N + 1
        e1 = generate_e(N, divide_interval(N), j);
@@ -33,5 +33,5 @@ for i = 1:length(X)
     end
 end
 
-%rysuje wykres
+% drawing plot
 plot(X,Y);
