@@ -1,6 +1,6 @@
 # FEM
 
-**Finite Element Methos Assigment Solution**
+**Finite Element Method Assigment Solution**
 
 Matlab code that solves and draws an aproximate plot to the following problem:
 
